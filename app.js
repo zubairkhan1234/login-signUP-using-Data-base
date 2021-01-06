@@ -1,7 +1,7 @@
 
 
 // const url = 'http://localhost:3000';
-const url = "https://databasaseform.herokuapp.com/"
+const url = "https://dashboard.heroku.com/apps/databasaseform"
 
 
 function signup() {
