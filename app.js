@@ -1,6 +1,7 @@
 
 
-const url = 'http://localhost:3000';
+// const url = 'http://localhost:3000';
+const url = "https://databasaseform.herokuapp.com/"
 
 
 function signup() {
@@ -26,8 +27,8 @@ function signup() {
     document.getElementById("password").value = ""
 
     const Http = new XMLHttpRequest();
-    const url = "http://localhost:3000/signup";
-    Http.open("POST", url);
+    // const url = "http://localhost:3000/signup";
+    Http.open("POST", url + "/signup");
     Http.setRequestHeader("Content-Type", "application/json");
 
     Http.send(JSON.stringify(userData));
@@ -59,8 +60,8 @@ function login() {
 
 
     const Http = new XMLHttpRequest();
-    const url = "http://localhost:3000/login"
-    Http.open("POST", url)
+    // const url = "http://localhost:3000/login"
+    Http.open("POST", url + "login")
     Http.setRequestHeader("Content-Type", "application/json");
     Http.send(JSON.stringify({
         email: loginEmail,
