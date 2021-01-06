@@ -3,6 +3,8 @@ var cors = require('cors')
 var morgan = require('morgan')
 var bodyParser = require('body-parser')
 var mongoose = require('mongoose')
+var path = require("path")
+const PORT = process.env.PORT || 5000;
 
 
 // let dbURI = "mongodb+srv://zubairabc:zubairabc@cluster0.9qvbs.mongodb.net/testdatabase";
@@ -67,7 +69,7 @@ var app = express()
 app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
-
+app.use("/", express.static(path.resolve(path.join(__dirname, "public"))));
 
 app.post('/signup', (req, res, next) => {
 
@@ -116,7 +118,7 @@ app.post('/signup', (req, res, next) => {
         } else {
 
            res.status(403).send({
-               message:"ueerer nasi llfl"
+               message:"User already exist"
            })
         }
     })
@@ -158,39 +160,10 @@ app.post("/login", (req, res, next) => {
 
 })
 
-// app.post("/login", (req, res, next) => {
-
-
-//     // res.send(JSON.stringify(req.body));
-//     var userEmail = req.body.userEmail;
-//     var userPassword = req.body.userPassword;
-//     // console.log(req.body.email)
-//     // console.log(req.body.password)
-//     // console.log(req.body);
-
-//     userModle.findOne({ email: userEmail, password: userPassword }), function (err, data) {
-
-//         if (err) {
-//             console.log(err)
-//             } else if (data) {
-
-//             res.send({
-//                 message: "login success",
-//                 status: 200
-//             })
-
-//             } else {
-//             res.send({
-//                 message: "User not found",
-//                 status: 403
-
-//             })
-//         }
-//     })
 
 
 
-const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
     console.log("surver is running on : ", PORT)
 });

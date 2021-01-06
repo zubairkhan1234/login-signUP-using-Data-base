@@ -1,7 +1,7 @@
 
 
-// const url = 'http://localhost:3000';
-const url = "https://dashboard.heroku.com"
+const url = 'http://localhost:5000';
+// const url = "https://dashboard.heroku.com"
 
 
 function signup() {
@@ -40,7 +40,7 @@ function signup() {
 
             if (jsonResponse.status === 200) {
                 alert(jsonResponse.message);
-                window.loccation.href = "index.html";
+                window.location.href="login.html";
             } else {
                 console.log(jsonResponse.status);
                 alert(jsonResponse.message);
@@ -77,7 +77,7 @@ function login() {
 
             if (jsonResponse.status === 200) {
                 alert(jsonResponse.message);
-                window.location.href = "home.html";
+                window.location.href="home.html";
             } else {
                 alert(jsonResponse.message);
             }
