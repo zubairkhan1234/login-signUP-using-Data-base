@@ -1,7 +1,7 @@
 
 
 // const url = 'http://localhost:3000';
-const url = "https://dashboard.heroku.com/apps/databasaseform"
+const url = "https://dashboard.heroku.com"
 
 
 function signup() {
@@ -61,7 +61,7 @@ function login() {
 
     const Http = new XMLHttpRequest();
     // const url = "http://localhost:3000/login"
-    Http.open("POST", url + "login")
+    Http.open("POST", url + "/login")
     Http.setRequestHeader("Content-Type", "application/json");
     Http.send(JSON.stringify({
         email: loginEmail,
